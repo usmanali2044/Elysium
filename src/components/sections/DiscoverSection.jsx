@@ -100,7 +100,7 @@ export function DiscoverSection() {
   return (
     <section
       id="programs"
-      className="relative overflow-hidden bg-[#050505] px-4 pb-24 pt-16 sm:px-6 sm:pb-28 sm:pt-20 lg:px-10"
+      className="relative overflow-hidden bg-[#050505] px-4 pb-20 pt-14 sm:px-6 sm:pb-28 sm:pt-20 lg:px-10"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,#050505_0%,rgba(5,5,5,0.65)_55%,rgba(5,5,5,0)_100%)]" />
       <div className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(204,255,74,0.12),transparent_70%)] blur-3xl" />
@@ -114,14 +114,14 @@ export function DiscoverSection() {
         >
           <motion.p
             variants={reveal}
-            className="font-body text-[0.8rem] uppercase tracking-[0.42em] text-lime-200/58"
+            className="font-body text-[0.72rem] uppercase tracking-[0.34em] text-lime-200/58 sm:text-[0.8rem] sm:tracking-[0.42em]"
           >
             Programs
           </motion.p>
           <motion.h2
             custom={1}
             variants={reveal}
-            className="font-display mt-4 text-[clamp(3rem,7vw,6.6rem)] uppercase leading-[0.9] tracking-[-0.05em] text-white"
+            className="font-display mt-4 text-[clamp(2.7rem,12vw,6.6rem)] uppercase leading-[0.9] tracking-[-0.05em] text-white"
           >
             Discover
             <span className="block text-lime-200">What Sets Us Apart</span>
@@ -129,7 +129,7 @@ export function DiscoverSection() {
           <motion.p
             custom={2}
             variants={reveal}
-            className="mx-auto mt-6 max-w-[46rem] text-sm leading-7 text-white/66 sm:text-base"
+            className="mx-auto mt-5 max-w-[23rem] text-sm leading-7 text-white/66 sm:mt-6 sm:max-w-[46rem] sm:text-base"
           >
             We deliver a fitness experience that feels truly one-of-a-kind.
             Explore how ELYSIUM helps you move faster, train smarter, and grow
@@ -142,39 +142,39 @@ export function DiscoverSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14"
+          className="mt-10 sm:mt-14"
         >
           <div
             ref={railRef}
             onScroll={syncPage}
-            className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:gap-6"
+            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-4 [scroll-padding-inline:1rem] sm:gap-6 sm:px-0 sm:[scroll-padding-inline:0px]"
           >
             {plans.map((plan) => (
               <article
                 key={plan.title}
-                className={`shrink-0 snap-start rounded-[2rem] border p-6 sm:p-7 lg:p-8 ${
+                className={`shrink-0 snap-center sm:snap-start rounded-[1.8rem] border p-5 sm:rounded-[2rem] sm:p-7 lg:p-8 ${
                   plan.featured
                     ? 'border-lime-200/26 bg-[linear-gradient(180deg,rgba(88,96,60,0.9),rgba(49,54,35,0.86))] shadow-[0_22px_44px_rgba(0,0,0,0.26)]'
                     : 'border-white/6 bg-[linear-gradient(180deg,rgba(23,23,19,0.88),rgba(13,13,13,0.92))]'
-                } w-[85vw] max-w-[19rem] sm:w-[20rem] sm:max-w-none lg:w-[23rem]`}
+                } w-[78vw] min-w-[16.5rem] max-w-[18rem] sm:w-[20rem] sm:max-w-none lg:w-[23rem]`}
               >
-                <div className="flex h-full min-h-[15rem] flex-col">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0b0d10] text-lime-200 shadow-[inset_0_0_0_1px_rgba(204,255,74,0.16)]">
+                <div className="flex h-full min-h-[14.5rem] flex-col sm:min-h-[15rem]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0b0d10] text-lime-200 shadow-[inset_0_0_0_1px_rgba(204,255,74,0.16)] sm:h-12 sm:w-12">
                     {plan.icon}
                   </div>
 
-                  <h3 className="font-body mt-6 text-[1.75rem] font-semibold leading-tight text-white">
+                  <h3 className="font-body mt-5 text-[1.35rem] font-semibold leading-tight text-white sm:mt-6 sm:text-[1.75rem]">
                     {plan.title}
                   </h3>
 
-                  <p className="mt-5 max-w-[16rem] text-sm leading-7 text-white/62 sm:text-[1.02rem]">
+                  <p className="mt-4 max-w-[15rem] text-[0.95rem] leading-7 text-white/62 sm:mt-5 sm:max-w-[16rem] sm:text-[1.02rem]">
                     {plan.description}
                   </p>
 
-                  <div className="mt-auto pt-8">
+                  <div className="mt-auto pt-6 sm:pt-8">
                     <a
                       href="#"
-                      className="inline-flex items-center rounded-full bg-[#c7f51b] px-6 py-3 text-sm font-bold text-[#070707] transition hover:-translate-y-0.5"
+                      className="inline-flex items-center rounded-full bg-[#c7f51b] px-5 py-2.5 text-sm font-bold text-[#070707] transition hover:-translate-y-0.5 sm:px-6 sm:py-3"
                     >
                       See Plan
                     </a>
