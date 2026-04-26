@@ -156,7 +156,7 @@ export function DiscoverSection() {
                   plan.featured
                     ? 'border-lime-200/26 bg-[linear-gradient(180deg,rgba(88,96,60,0.9),rgba(49,54,35,0.86))] shadow-[0_22px_44px_rgba(0,0,0,0.26)]'
                     : 'border-white/6 bg-[linear-gradient(180deg,rgba(23,23,19,0.88),rgba(13,13,13,0.92))]'
-                } w-[18rem] sm:w-[20rem] lg:w-[23rem]`}
+                } w-[85vw] max-w-[19rem] sm:w-[20rem] sm:max-w-none lg:w-[23rem]`}
               >
                 <div className="flex h-full min-h-[15rem] flex-col">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0b0d10] text-lime-200 shadow-[inset_0_0_0_1px_rgba(204,255,74,0.16)]">

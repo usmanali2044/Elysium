@@ -40,25 +40,35 @@ export function SiteHeader() {
       initial="hidden"
       animate="show"
       variants={navContainer}
-      className="relative z-40 flex items-center justify-between gap-4 py-3 sm:py-4"
+      className="relative z-40 flex flex-col gap-3 py-3 sm:gap-4 sm:py-4 lg:flex-row lg:items-center lg:justify-between"
     >
-      <motion.a
-        variants={navItem}
-        href="#home"
-        className="flex items-center gap-3"
-        aria-label="ELYSIUM home"
-      >
-        <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-lime-200/14 bg-[#171513] p-1 shadow-[0_10px_28px_rgba(188,235,22,0.12)] sm:h-12 sm:w-12">
-          <img
-            src={brandLogo}
-            alt=""
-            className="h-full w-full rounded-[0.9rem] object-cover"
-          />
-        </span>
-        <span className="font-display text-[1.95rem] font-semibold uppercase tracking-[0.16em] text-white sm:text-[2.25rem]">
-          ELYSIUM
-        </span>
-      </motion.a>
+      <div className="flex items-center justify-between gap-3">
+        <motion.a
+          variants={navItem}
+          href="#home"
+          className="flex min-w-0 items-center gap-2.5 sm:gap-3"
+          aria-label="ELYSIUM home"
+        >
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl border border-lime-200/14 bg-[#171513] p-1 shadow-[0_10px_28px_rgba(188,235,22,0.12)] sm:h-12 sm:w-12">
+            <img
+              src={brandLogo}
+              alt=""
+              className="h-full w-full rounded-[0.9rem] object-cover"
+            />
+          </span>
+          <span className="font-display truncate text-[1.55rem] font-semibold uppercase tracking-[0.14em] text-white sm:text-[1.95rem] lg:text-[2.25rem]">
+            ELYSIUM
+          </span>
+        </motion.a>
+
+        <motion.a
+          variants={navItem}
+          href="#programs"
+          className="hero-button-primary rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] sm:hidden"
+        >
+          Join
+        </motion.a>
+      </div>
 
       <motion.nav
         variants={navContainer}
@@ -95,6 +105,22 @@ export function SiteHeader() {
           Join Now
         </motion.a>
       </motion.div>
+
+      <motion.nav
+        variants={navContainer}
+        className="no-scrollbar flex gap-2 overflow-x-auto pb-1 lg:hidden"
+      >
+        {navItems.map((item) => (
+          <motion.a
+            key={`mobile-${item.label}`}
+            variants={navItem}
+            href={item.href}
+            className="hero-panel shrink-0 rounded-full px-4 py-2 text-[0.78rem] font-medium tracking-[0.12em] text-white/72 transition hover:text-white"
+          >
+            {item.label}
+          </motion.a>
+        ))}
+      </motion.nav>
     </motion.header>
   )
 }

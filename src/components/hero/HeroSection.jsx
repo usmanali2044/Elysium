@@ -146,7 +146,7 @@ export function HeroSection() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative isolate h-screen overflow-hidden bg-[#050505]"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-[#050505] md:h-screen"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_36%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-[-10%] h-[36rem] bg-[radial-gradient(circle,rgba(215,255,63,0.18),transparent_60%)] blur-3xl" />
@@ -155,7 +155,7 @@ export function HeroSection() {
         className="pointer-events-none absolute left-1/2 top-[38%] h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),rgba(255,255,255,0.04)_38%,transparent_72%)] opacity-70 blur-2xl md:h-[34rem] md:w-[34rem] xl:h-[40rem] xl:w-[40rem]"
       />
 
-      <div className="relative mx-auto flex h-screen max-w-[1600px] flex-col px-4 pb-3 sm:px-6 sm:pb-4 lg:px-10">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-[1600px] flex-col px-4 pb-4 sm:px-6 sm:pb-4 md:h-screen lg:px-10">
         <SiteHeader />
 
         <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
@@ -196,7 +196,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 30, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="relative z-30 mx-auto flex h-[clamp(26rem,62vh,45rem)] max-w-[88vw] items-end justify-center sm:h-[clamp(29rem,64vh,47rem)] lg:h-[clamp(33rem,72vh,54rem)]"
+                className="relative z-30 mx-auto flex h-[clamp(18rem,42vh,24rem)] max-w-[92vw] items-end justify-center sm:h-[clamp(24rem,54vh,34rem)] sm:max-w-[88vw] lg:h-[clamp(33rem,72vh,54rem)]"
               >
                 <div className="pointer-events-none absolute inset-x-[12%] bottom-[11%] h-[16%] rounded-full bg-[radial-gradient(circle,rgba(0,0,0,0.88),transparent_74%)] blur-xl" />
                 <div className="pointer-events-none absolute inset-x-0 top-[4%] h-[90%] rounded-[40%] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%,rgba(255,255,255,0.06)_74%,transparent)] blur-3xl" />
@@ -209,7 +209,7 @@ export function HeroSection() {
               </motion.figure>
             </div>
 
-            <div className="relative z-30 mt-2 flex w-full flex-col gap-3 pb-2 md:hidden">
+            <div className="relative z-30 mt-3 grid w-full gap-3 pb-2 md:hidden">
               {mobileStats.map(([title, subtitle]) => (
                 <div
                   key={title}
@@ -223,18 +223,18 @@ export function HeroSection() {
               ))}
             </div>
 
-            <div className="relative z-30 mt-2 grid w-full gap-3 pb-1 md:-mt-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-end lg:-mt-6">
+            <div className="relative z-30 mt-3 grid w-full gap-4 pb-2 md:-mt-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-end lg:-mt-6">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ ...copyTransition, delay: 0.5 }}
-                className="flex items-end gap-4 self-start md:self-end"
+                className="flex items-end gap-3 self-start md:gap-4 md:self-end"
               >
-                <div className="flex -space-x-3">
+                <div className="flex -space-x-2.5 sm:-space-x-3">
                   {avatarPositions.map((position) => (
                     <div
                       key={position}
-                      className="size-[3.1rem] overflow-hidden rounded-full border-2 border-black bg-zinc-900 shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
+                      className="size-[2.75rem] overflow-hidden rounded-full border-2 border-black bg-zinc-900 shadow-[0_12px_28px_rgba(0,0,0,0.35)] sm:size-[3.1rem]"
                     >
                       <img
                         src={heroImage}
@@ -246,10 +246,10 @@ export function HeroSection() {
                   ))}
                 </div>
                 <div>
-                  <p className="font-display text-[2.4rem] leading-none tracking-[-0.04em] text-white lg:text-[2.8rem]">
+                  <p className="font-display text-[2.05rem] leading-none tracking-[-0.04em] text-white sm:text-[2.3rem] lg:text-[2.8rem]">
                     12K+
                   </p>
-                  <p className="mt-1 text-[0.72rem] uppercase tracking-[0.24em] text-white/62 lg:text-[0.82rem]">
+                  <p className="mt-1 text-[0.66rem] uppercase tracking-[0.2em] text-white/62 sm:text-[0.72rem] lg:text-[0.82rem]">
                     Stronger members
                   </p>
                 </div>
@@ -265,12 +265,12 @@ export function HeroSection() {
                   Precision coaching, premium recovery, and a training floor
                   designed to make every session feel cinematic.
                 </p>
-                <div className="flex flex-wrap items-center gap-3 md:justify-end">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center md:justify-end">
                   <motion.a
                     href="#"
                     whileHover={prefersReducedMotion ? undefined : { y: -4 }}
                     whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-                    className="hero-button-primary rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[0.14em]"
+                    className="hero-button-primary rounded-full px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.14em]"
                   >
                     Start Training
                   </motion.a>
@@ -278,7 +278,7 @@ export function HeroSection() {
                     href="#"
                     whileHover={prefersReducedMotion ? undefined : { y: -4 }}
                     whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-                    className="hero-button-secondary rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em]"
+                    className="hero-button-secondary rounded-full px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.14em]"
                   >
                     View Programs
                   </motion.a>
